@@ -778,7 +778,7 @@ last_command_valid_time = {}
 
 # Diccionario de cooldowns personalizados
 cooldowns = {
-    "default": 20,  # Cooldown estándar en segundos
+    "default": 35,  # Cooldown estándar en segundos
     "leo_vidal_username": 0,  # Sin antispam
     "Josepapu14": 0  # Sin antispam
 }
