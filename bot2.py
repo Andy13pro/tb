@@ -102,6 +102,9 @@ command_translation = {
 '/mtc': '/mtc',
 '/c4': '/c4',
 '/c4b': '/c4w',
+'/migrapdf2': '/migrapdfdb',
+'/agvx': '/agv',
+'/agv10': '/agvp',
 
 '/c4t': '/c4t',
 '/antpol': '/antpol',
