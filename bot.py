@@ -242,7 +242,7 @@ async def forward_response(event):
     Procesa las respuestas de los bots y maneja las condiciones de envío.
     """
     # Captura respuestas rápidas de 'rave'
-    if event.sender_id == bots_usernames['rave']:
+    if event.sender_id == bots_usernames['Leder']:
         global rave_responses
         rave_responses.append(event.message)
 
