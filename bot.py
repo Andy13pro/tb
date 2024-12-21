@@ -28,7 +28,7 @@ bot_command_map = {
         '/migra', '/mtc', '/c4', '/c4w', '/c4t', '/seeker', '/antpol',
         '/antpen', '/antjud', '/antpenver', '/antjudver', '/antpolver', '/tive','/biv','/tivep'
     ],
-    'Leder': ['/actan', '/actam', '/actad', '/migrapdf', '/fisdet', '/actamdb', '/actaddb', '/fa'],
+    'Leder': ['/actan', '/actam', '/actad', '/migrapdf', '/fisdet', '/actamdb', '/actaddb', '/fa', '/migrapdfdb', '/agv', '/agvp'],
     'Lain': ['/dniv', '/bolinf']
 }
 
