@@ -8,6 +8,7 @@ session_name = 'leoVidal_session'
 bots_usernames = {
     'fenix': '@FENIX_FX_BOT',  # Nombre de usuario del bot Fenix
     'Leder': 'LEDERDATA_OFC_BOT', # Nombre de usuario de otro bot adicional
-     'Lain': 'LainDoxBeta_Bot'  # Nombre de usuario de otro bot adicional
+     'Lain': 'LainDoxBeta_Bot',  # Nombre de usuario de otro bot adicional
+     'Yape': 'JupyterPeBot'  # Nombre de usuario de otro bot adicional
 
 }
