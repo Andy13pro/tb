@@ -19,17 +19,17 @@ palabras_clave_reintentos = ["[⛔] ANTI-SPAM ESPERA", "[⛔] ESPERA ANTES DE RE
 # Lista de comandos permitidos por cada bot
 bot_command_map = {
     'fenix': [
-       '/dnif', '/dnifd', '/nm', 
+      '/dnifd', '/nm', 
         '/mpfn', '/detenciones', '/antpdf', '/rqpdf', '/denuncias', '/renadespdf',
         '/ant', '/rq', '/sunarp',  '/pla', '/partida', '/dnivir',
-        '/dnive', '/licencia', '/agv', '/tel', '/telp', '/bitel',
-        '/claro', '/ag', '/tra', '/sunedu', '/mine', '/afp',
-        '/finan', '/sbs', '/co', '/dir', '/sunat', '/ce', '/cve', '/nmve', '/sueldos',
-        '/migra', '/mtc', '/c4', '/c4w', '/c4t', '/seeker', '/antpol',
+        '/dnive', '/licencia', '/agv',  '/bitel',
+        '/claro', '/sunedu', '/mine', '/afp',
+        '/finan', '/sbs', '/dir', '/sunat', '/ce', '/cve', '/nmve', '/sueldos',
+        '/mtc', '/c4', '/c4w', '/c4t', '/seeker', '/antpol',
         '/antpen', '/antjud', '/antpenver', '/antjudver', '/antpolver', '/tive','/biv','/tivep'
     ],
-    'Leder': ['/actan', '/actam', '/actad', '/migrapdf', '/fisdet', '/actamdb', '/actaddb', '/fa', '/migrapdfdb', '/agv', '/agvp'],
-    'Lain': ['/dniv', '/bolinf']
+    'Leder': ['/nm','/migra','/ag','/c4', '/tra','/sune','/co','/telp','/sue','/tel','/fam', '/ag','/dnif','/actan', '/actam', '/actad', '/migrapdf', '/fisdet', '/actamdb', '/actaddb', '/fa', '/migrapdfdb', '/agv', '/agvp'],
+    'Yape': ['/yape_generate']
 }
 
 
@@ -38,8 +38,13 @@ def procesar_respuesta_generica(texto_respuesta, comando):
     # Definir los patrones de reemplazo para cada comando
     patrones_reemplazo = {
         '/dnif': {
-            'ESTADO CIVIL': '[📝] 𝗜𝗡𝗙𝗢\n\n𝗘𝗦𝗧𝗔𝗗𝗢 𝗖𝗜𝗩𝗜𝗟',
+            'GRADO INSTRUCCION': '[📝] 𝗜𝗡𝗙𝗢\n\n𝗚𝗥𝗔𝗗𝗢 𝗗𝗘 𝗜𝗡𝗦𝗧𝗥𝗨𝗖𝗖𝗜𝗢𝗡',
             'PROVINCIA': '𝗣𝗥𝗢𝗩𝗜𝗡𝗖𝗜𝗔',
+                        'ESTADO CIVIL': '𝗘𝗦𝗧𝗔𝗗𝗢 𝗖𝗜𝗩𝗜𝗟',
+                '[#LEDER_BOT] → RENIEC ONLINE[PREMIUM]': '#PISLLING_DOX_RENIEC\n━━━━━━━━━━━━━━━━━━',
+
+         'DIRECCIÓN': '𝗗𝗜𝗥𝗘𝗖𝗖𝗜𝗢𝗡',
+
                         '[⚠] Error. Posiblemente el servidor de RENIEC se encuentra caido, porfavor esperar a que se restablezca. Como alternativa puedes usar el respaldo /dnifd.': '[⚠️ Atención] El servidor de RENIEC está presentando problemas de conexión. Por favor, intenta nuevamente más tarde. Alternativamente, utiliza el respaldo /dnifb.',
 
 
@@ -152,13 +157,38 @@ def procesar_respuesta_generica(texto_respuesta, comando):
         'RESULTADOS TRABAJOS': '💼 | 𝗥𝗘𝗦𝗨𝗟𝗧𝗔𝗗𝗢 𝗖𝗛𝗔𝗠𝗕𝗔',
 
         
-    }
+    } ,  '/telp': {
+        'DNI': '𝗗𝗡𝗜',
+        'TELEFONO': '𝗡𝗨𝗠𝗘𝗥𝗢',
+         'TIPO': '𝗖𝗟𝗔𝗦𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢𝗡',
+         'PLAN': '𝗣𝗟𝗔𝗡',
+         'TITULAR': '𝗧𝗜𝗧𝗨𝗟𝗔𝗥',
+                  'PERIODO': '𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗢',
+
+        } ,  '/tel': {
+        'DNI': '𝗗𝗡𝗜',
+        'TELEFONO': '𝗡𝗨𝗠𝗘𝗥𝗢',
+         'TIPO': '𝗖𝗟𝗔𝗦𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢𝗡',
+         'PLAN': '𝗣𝗟𝗔𝗡',
+         'TITULAR': '𝗧𝗜𝗧𝗨𝗟𝗔𝗥',
+                  'PERIODO': '𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗢',
+
+
+        },
+            '/migra': {
+        'FECHA MOVIMIENTO': '𝗙𝗘𝗖𝗛𝗔 𝗠𝗢𝗩.',
+        'NRO DOCUMENTO': '𝗡𝗥𝗢 𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧𝗢',
+         'PROCEDENCIA/DESTINO': '𝗣𝗔𝗥𝗧𝗜𝗗𝗔/𝗗𝗘𝗦𝗧𝗜𝗡𝗢',
+         'TIPO DOCUMENTO': '𝗧𝗜𝗣𝗢 𝗗𝗘 𝗗𝗢𝗖𝗨. ',
+         'TIPO MOVIMIENTO': '𝗧𝗜𝗣𝗢 𝗠𝗢𝗩𝗜𝗠𝗜𝗘𝗡𝗧𝗢'
+
+        }
         # Puedes agregar más comandos aquí
         # Puedes agregar más comandos aquí
     }
  # Aplicar el patrón de eliminación específico de 'ACTAS REGISTRADAS' solo para ciertos comandos
     if comando in ['/dnif', '/dnid']:
-        patron_eliminar = r'ACTAS REGISTRADAS.*'
+        patron_eliminar = r'ACTAS / CERTIFICADOS.*'
         texto_respuesta = re.sub(patron_eliminar, '', texto_respuesta, flags=re.DOTALL)
     # Aplicar los reemplazos correspondientes al comando usando expresiones regulares
     if comando in patrones_reemplazo:
@@ -233,7 +263,9 @@ async def handle_command(event):
         original_messages[sent_message.id]['original_id'] = event.message.id
     except Exception as e:
         print(f"Error enviando el mensaje: {e}")
-
+async def handle_images(event, images):
+    for image in images: 
+        await event.reply(file=image)
 import shutil
 
 @client.on(events.NewMessage(from_users=list(bots_usernames.values())))
@@ -294,6 +326,7 @@ async def forward_response(event):
                 media_path = await event.message.download_media()
 
                 if enviar_solo_imagenes:
+                    
                     await client.send_file(destination_chat_id, media_path, reply_to=original_id)
                     print(f"Solo imagen enviada para {command_used}: {media_path}")
                 else:
@@ -352,10 +385,51 @@ async def forward_response(event):
         print("El mensaje fue eliminado y no se pudo reenviar.")
     except Exception as e:
         print(f"Error reenviando el mensaje: {e}")
+# Diccionario para rastrear comandos pendientes de /yape_generate
+pending_yape_requests = {}
 
+yape_bot_username = 'JupyterPeBot'  # Nombre de usuario del bot Yape
 
+@client.on(events.NewMessage(pattern='/yape_generate'))
+async def handle_yape_generate(event):
+    """
+    Maneja el comando /yape_generate, enviándolo al bot Yape y rastreando la respuesta.
+    """
+    # Obtener el contenido del comando
+    command_args = event.message.text.split(maxsplit=1)
+    if len(command_args) < 2:
+        await event.reply("Uso incorrecto. Ejemplo: /yape_generate 480|Andy A. Rabano C.|1000")
+        return
 
+    query = command_args[1]
 
+    # Enviar el mensaje al bot Yape
+    await client.send_message(yape_bot_username, query)
+
+    # Registrar el mensaje pendiente para capturar la respuesta
+    pending_yape_requests[event.message.id] = {
+        'original_event': event,
+        'responses': []
+    }
+
+@client.on(events.NewMessage(from_users=yape_bot_username))
+async def handle_yape_response(event):
+    """
+    Maneja las respuestas provenientes del bot Yape y las reenvía como respuesta al usuario original.
+    """
+    # Buscar si hay algún comando pendiente
+    for original_message_id, request_data in list(pending_yape_requests.items()):
+        if len(request_data['responses']) < 2:  # Máximo 2 mensajes por respuesta
+            # Agregar el mensaje a las respuestas rastreadas
+            request_data['responses'].append(event.message)
+
+            # Responder al usuario original como respuesta directa al comando
+            original_event = request_data['original_event']
+            await original_event.reply(event.message.message, file=event.message.media)
+
+        # Si ya se capturaron 2 mensajes, eliminar el registro pendiente
+        if len(request_data['responses']) >= 2:
+            del pending_yape_requests[original_message_id]
 
 @client.on(events.MessageEdited)
 async def handle_edited_message(event):
