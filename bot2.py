@@ -59,6 +59,7 @@ command_translation = {
 '/actan': '/actan',
 '/fisdet': '/fisdet',
 '/c4f': '/fa',
+'/yape': '/yape_generate',
 
 '/actam': '/actam',
 '/actad': '/actad',
@@ -76,8 +77,8 @@ command_translation = {
 '/dnielec': '/dnive',
 '/licencia': '/licencia',
 '/migrapdf': '/migrapdf',
-'/fono': '/tel',
-'/telp': '/telp',
+'/fono': '/telp',
+'/telp': '/tel',
 '/bitx': '/bitel',
 '/clax': '/claro',
 '/bolinf': '/biv',
@@ -85,7 +86,7 @@ command_translation = {
 
 '/arbol': '/ag',
 '/chamba': '/tra',
-'/sune': '/sunedu',
+'/titulos': '/sune',
 '/mine': '/mine',
 '/afp': '/afp',
 '/dnif': '/rhf',
@@ -97,8 +98,10 @@ command_translation = {
 '/ce': '/ce',
 '/cve': '/cve',
 '/nmve': '/nmve',
-'/salario': '/sueldos',
+'/salario': '/sue',
 '/migra': '/migra',
+'/familia': '/fam',
+
 '/mtc': '/mtc',
 '/c4': '/c4',
 '/c4b': '/c4w',
@@ -144,13 +147,14 @@ command_costs = {
 '/fono': 2,
 '/dnive2': 2,
 '/dni': 2,
+'/familia': 4,
 
 '/telp': 5,
 '/bitx': 4,
 '/clax': 4,
 '/arbol': 3,
 '/chamba': 3,
-'/sune': 3,
+'/titulos': 3,
 '/mine': 4,
 '/afp': 3,
 '/finan': 4,
@@ -161,7 +165,7 @@ command_costs = {
 '/cve': 1,
 '/nmve': 1,
 '/salario': 4,
-'/plinf': 4,
+'/yape': 2,
 '/rhf': 4,
 
 '/migra': 6,
@@ -190,7 +194,7 @@ blocked_data = {
     "numbers": ["927904737"],
     "dni": ["61769516"]
 }
-
+banpriv = False # Variable global para controlar el estado de banpriv
 owner_username = 'AKdios'
 owners = [owner_username, 'yuta_faster', 'AKdios', 'OKARUN_OV', 'reigenpe']
 sellers = [owner_username, 'The_Goa7', 'LuckLP']
@@ -1465,7 +1469,12 @@ async def forward_response(event):
         '•············[#FENIXBOT]·············•': '',
         '[#FENIXBOT]': '',
         '🪙 FenixCoins : ♾ - Jose': '',
-        '🪙 FenixCoins : ♾ → Jose': '',
+        'RAZON SOCIAL': '𝗥𝗔𝗭Ó𝗡 𝗦𝗢𝗖𝗜𝗔𝗟',
+        'FECHA MOVIMIENTO': '𝗙𝗘𝗖𝗛𝗔 𝗠𝗢𝗩.',
+        'NRO DOCUMENTO': '𝗡𝗥𝗢 𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧𝗢',
+         'PROCEDENCIA/DESTINO': '𝗣𝗔𝗥𝗧𝗜𝗗𝗔/𝗗𝗘𝗦𝗧𝗜𝗡𝗢',
+         'TIPO DOCUMENTO': '𝗧𝗜𝗣𝗢 𝗗𝗘 𝗗𝗢𝗖𝗨. ',
+         'TIPO MOVIMIENTO': '𝗧𝗜𝗣𝗢 𝗠𝗢𝗩𝗜𝗠𝗜𝗘𝗡𝗧𝗢',
 
         'MODO : UNLIMITED LVL 3': '━━━━━━━━━━━━━━━━━━',        
         'UBICACION': '𝕌𝔹𝕀ℂ𝔸ℂ𝕀Óℕ',
@@ -1502,6 +1511,8 @@ async def forward_response(event):
         'resultados en': '𝗿𝗲𝘀𝘂𝗹𝘁𝗮𝗱𝗼 𝗲𝗻𝗰𝗼𝗻𝘁𝗿𝗮𝗱𝗼 𝗲𝗻',
         '«': '🤖',
         '⚠️': '',
+         'Credits : ♾️': '━━━━━━━━━━━━━━━━━━',
+        'Wanted for : Jose': '',
         ':': '→',
         '[⚠] Este comando se encuentra en mantenimiento.': '𝐂𝐨𝐦𝐚𝐧𝐝𝐨 𝐞𝐧 𝐦𝐚𝐧𝐭𝐞𝐧𝐢𝐦𝐢𝐞𝐧𝐭𝐨',
 
@@ -1532,7 +1543,9 @@ async def forward_response(event):
         'APELLIDOS': '𝗔𝗣𝗘𝗟𝗟𝗜𝗗𝗢𝗦 ',
         'NOMBRES': '𝗡𝗢𝗠𝗕𝗥𝗘',
         'SEXO': '𝗦𝗘𝗫𝗢',
-                '**[📃]': '',
+                '[#LEDER_BOT] → RENIEC ONLINE[PREMIUM]': '#PISLLING_DOX_RENIEC\n━━━━━━━━━━━━━━━━━━',
+
+                '**[🩸]': '━━━━━━━━━━━━━━━━━━',
 
          'FALLECIMIENTO': '𝗗𝗘𝗙𝗨𝗡𝗖𝗜𝗢𝗡',
                 '[⛔] ANTI-SPAM ESPERA 10 SEGUNDOS.': '',
@@ -1553,8 +1566,18 @@ async def forward_response(event):
         'MADRE': '𝗠𝗔𝗗𝗥𝗘 ',
         '[🔅] UBIGEO': '[🌐] 𝗨𝗕𝗜𝗚𝗘𝗢',
         'RESULTADOS 𝗦𝗔𝗟𝗔𝗥𝗜𝗢S': '💶 | 𝗥𝗘𝗦𝗨𝗟𝗧𝗔𝗗𝗢 𝗦𝗔𝗟𝗔𝗥𝗜𝗢',
+       
+        '[#LEDER_BOT] → TELEFONOS [PREMIUM]': '☎️ | 𝗢𝗦𝗜𝗣𝗧𝗘𝗟 𝗢𝗡𝗟𝗜𝗡𝗘\n━━━━━━━━━━━━━━━━━━',
+        '[#LEDER_BOT] → TELEFONOS [FREE]': '☎️ | 𝗕𝗔𝗦𝗘 𝗢𝗦𝗜𝗣𝗧𝗘𝗟\n━━━━━━━━━━━━━━━━━━',
+        '[#LEDER_BOT] → TRABAJOS [PREMIUM]': '💼 | 𝗛𝗜𝗦𝗧𝗢𝗥𝗜𝗔𝗟 𝗖𝗛𝗔𝗠𝗕𝗔\n━━━━━━━━━━━━━━━━━━',
+        '[#LEDER_BOT] → FAMILIA [PREMIUM]': '🌱 | 𝗥𝗔𝗠𝗔 \n━━━━━━━━━━━━━━━━━━',
+        '[#LEDER_BOT] → SUELDOS [PREMIUM]': '💶 | 𝗛𝗜𝗦𝗧𝗢𝗥𝗜𝗔𝗟 𝗦𝗔𝗟𝗔𝗥𝗜𝗔𝗟\n━━━━━━━━━━━━━━━━━━',
+        '[#LEDER_BOT] → SUNEDU [PREMIUM]': '🎓 | 𝗧𝗜𝗧𝗨𝗟𝗢𝗦 𝗨𝗡𝗜\n━━━━━━━━━━━━━━━━━━',
+        '[#LEDER_BOT] → ARBOL GENEALOGICO [PREMIUM]': '🌲 | 𝗔𝗥𝗕𝗢𝗟 𝗚𝗘𝗡𝗘𝗔𝗟𝗢𝗚𝗜𝗖𝗢\n━━━━━━━━━━━━━━━━━━',
+        '[#LEDER_BOT] → MOVIMIENTOS MIGRATORIOS ONLINE [PREMIUM]': '🛂 | 𝗠𝗢𝗩𝗜𝗠𝗜𝗘𝗡𝗧𝗢𝗦 𝗠𝗜𝗚𝗥𝗔𝗧𝗢𝗥𝗜𝗢𝗦\n━━━━━━━━━━━━━━━━━━',
+        '[#JUPYTER_BOT] → CAPTURA[YAPE]': '🟣 | 𝗖𝗔𝗣𝗧𝗨𝗥𝗔 𝗬𝗔𝗣𝗘\n━━━━━━━━━━━━━━━━━━',
 
-        'RESTRICCIONES': '𝗥𝗘𝗦𝗧𝗥𝗜𝗖𝗖𝗜𝗢𝗡',
+        'RESTRICCION': '𝗥𝗘𝗦𝗧𝗥𝗜𝗖𝗖𝗜𝗢𝗡',
         'UBIGEO RENIEC': '𝗨𝗕𝗜𝗚𝗘𝗢 𝗥𝗘𝗡𝗜𝗘𝗖',
         'UBIGEO INEI': '𝗨𝗕𝗜𝗚𝗘𝗢 𝗜𝗡𝗘𝗜',
         'UBIGEO SUNAT': '𝗨𝗕𝗜𝗚𝗘𝗢 𝗦𝗨𝗡𝗔𝗧',
@@ -1565,7 +1588,11 @@ async def forward_response(event):
         'DOCUMENTO': '𝗗𝗡𝗜',
         'GENERO': '𝗚𝗘𝗡𝗘𝗥𝗢',
         'EDAD': '𝗘𝗗𝗔𝗗',
-        'VERIFICACION RELACION': '𝗩𝗘𝗥𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢𝗡 𝗥𝗘𝗟𝗔𝗖𝗜𝗢𝗡'
+        'Se encontro': '',
+
+        'VERIFICACION RELACION': '𝗩𝗘𝗥𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢𝗡 𝗥𝗘𝗟𝗔𝗖𝗜𝗢𝗡',
+                '↞ Puedes visualizar la foto de una coincidencia gratuitamente antes de usar /dni ↠ ': '𝗩𝗘𝗥𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢𝗡 𝗥𝗘𝗟𝗔𝗖𝗜𝗢𝗡'
+
 
     }
 
@@ -1781,6 +1808,25 @@ async def check_expired_premium():
         await asyncio.sleep(86400)  # Esperar 24 horas antes de verificar nuevamente
 
 
+@client.on(events.NewMessage(pattern='/banprivg'))
+async def handle_banprivg(event):
+    sender = await event.get_sender()
+    if sender.username in owner_username:
+        global banpriv
+        banpriv = True
+        await event.reply("✅ `banpriv` activado. El bot no responderá a nadie en privado excepto a los administradores.")
+    else:
+        await event.reply("❌ No tienes permisos para usar este comando.")
+
+@client.on(events.NewMessage(pattern='/unbanprivg'))
+async def handle_unbanprivg(event):
+    sender = await event.get_sender()
+    if sender.username in owner_username:
+        global banpriv
+        banpriv = False
+        await event.reply("✅ `banpriv` desactivado. El bot responderá normalmente en privado.")
+    else:
+        await event.reply("❌ No tienes permisos para usar este comando.")
 
 private_command_count = defaultdict(int)
 
@@ -1800,6 +1846,11 @@ async def handle_private_message(event):
     sender = await event.get_sender()
     username = sender.username or str(sender.id)
 
+    # Verificar el estado de `banpriv`
+    global banpriv
+    if banpriv and sender.username not in owner_username:
+        # No responder a nadie en privado excepto a los administradores
+        return
     # Evitar procesamiento duplicado para el mismo mensaje
     if event.id in original_messages:
         print(f"Mensaje ya procesado: {event.id}")
