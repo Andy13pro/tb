@@ -19,16 +19,15 @@ palabras_clave_reintentos = ["[⛔] ANTI-SPAM ESPERA", "[⛔] ESPERA ANTES DE RE
 # Lista de comandos permitidos por cada bot
 bot_command_map = {
     'fenix': [
-      '/dnifd', '/nm', 
+      '/dnifd',
         '/mpfn', '/detenciones', '/antpdf', '/rqpdf', '/denuncias', '/renadespdf',
-        '/ant', '/rq', '/sunarp',  '/pla', '/partida', '/dnivir',
+        '/ant', '/rq', '/sunarp', '/partida', '/dnivir',
         '/dnive', '/licencia', '/agv',  '/bitel',
         '/claro', '/sunedu', '/mine', '/afp',
         '/finan', '/sbs', '/dir', '/sunat', '/ce', '/cve', '/nmve', '/sueldos',
-        '/mtc', '/c4', '/c4w', '/c4t', '/seeker', '/antpol',
-        '/antpen', '/antjud', '/antpenver', '/antjudver', '/antpolver', '/tive','/biv','/tivep'
+        '/mtc', '/c4w', '/c4t', '/seeker', '/tive','/biv','/tivep'
     ],
-    'Leder': ['/nm','/migra','/ag','/c4', '/tra','/sune','/co','/telp','/sue','/tel','/fam', '/ag','/dnif','/actan', '/actam', '/actad', '/migrapdf', '/fisdet', '/actamdb', '/actaddb', '/fa', '/migrapdfdb', '/agv', '/agvp'],
+    'Leder': ['/nm', '/pla', '/migra','/ag','/c4','/antpol', '/tra','/sune','/dnivaz','/dnivam','/co','/telp','/antpen', '/antjud','/sue','/tel','/fam', '/ag','/dnif','/actan', '/actam', '/actad', '/migrapdf', '/fisdet', '/actamdb', '/actaddb', '/fa', '/migrapdfdb', '/agv', '/agvp'],
     'Yape': ['/yape_generate']
 }
 
@@ -102,8 +101,7 @@ def procesar_respuesta_generica(texto_respuesta, comando):
         },
             '/nm': {
         'DNI': '𝗗𝗡𝗜',
-        'RESULTADOS NOMBRES': '🔍 | 𝗥𝗘𝗦𝗨𝗟𝗧𝗔𝗗𝗢 𝗡𝗢𝗠𝗕𝗥𝗘',
-         'NOMBRES': '𝗡𝗢𝗠𝗕𝗥𝗘',
+        '[#LEDER_BOT] → RENIEC NOMBRES [PREMIUM]': '🔍 | 𝗥𝗘𝗦𝗨𝗟𝗧𝗔𝗗𝗢 𝗡𝗢𝗠𝗕𝗥𝗘',
          'APELLIDOS': '𝗔𝗣𝗘𝗟𝗟𝗜𝗗𝗢𝗦 ',
          'EDAD': '𝗘𝗗𝗔𝗗'
 
@@ -159,7 +157,6 @@ def procesar_respuesta_generica(texto_respuesta, comando):
         
     } ,  '/telp': {
         'DNI': '𝗗𝗡𝗜',
-        'TELEFONO': '𝗡𝗨𝗠𝗘𝗥𝗢',
          'TIPO': '𝗖𝗟𝗔𝗦𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢𝗡',
          'PLAN': '𝗣𝗟𝗔𝗡',
          'TITULAR': '𝗧𝗜𝗧𝗨𝗟𝗔𝗥',
@@ -167,7 +164,6 @@ def procesar_respuesta_generica(texto_respuesta, comando):
 
         } ,  '/tel': {
         'DNI': '𝗗𝗡𝗜',
-        'TELEFONO': '𝗡𝗨𝗠𝗘𝗥𝗢',
          'TIPO': '𝗖𝗟𝗔𝗦𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢𝗡',
          'PLAN': '𝗣𝗟𝗔𝗡',
          'TITULAR': '𝗧𝗜𝗧𝗨𝗟𝗔𝗥',
