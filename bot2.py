@@ -84,6 +84,8 @@ command_translation = {
 '/bolinf': '/biv',
 '/plantive': '/tivep',
 
+'/dnivz': '/dnivaz',
+'/dnivm': '/dnivam',
 '/arbol': '/ag',
 '/chamba': '/tra',
 '/titulos': '/sune',
@@ -148,7 +150,8 @@ command_costs = {
 '/dnive2': 2,
 '/dni': 2,
 '/familia': 4,
-
+'/dnivm':4,
+'/dnivz':4,
 '/telp': 5,
 '/bitx': 4,
 '/clax': 4,
@@ -1540,8 +1543,6 @@ async def forward_response(event):
          'ACTIVACION': '𝗗𝗘 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗢',
         'ACTUALIZACION': '𝗗𝗘 𝗠𝗢𝗗𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢𝗡',
         'TIPO': '𝗖𝗟𝗔𝗦𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢𝗡',
-        'APELLIDOS': '𝗔𝗣𝗘𝗟𝗟𝗜𝗗𝗢𝗦 ',
-        'NOMBRES': '𝗡𝗢𝗠𝗕𝗥𝗘',
         'SEXO': '𝗦𝗘𝗫𝗢',
                 '[#LEDER_BOT] → RENIEC ONLINE[PREMIUM]': '#PISLLING_DOX_RENIEC\n━━━━━━━━━━━━━━━━━━',
 
@@ -1566,7 +1567,6 @@ async def forward_response(event):
         'MADRE': '𝗠𝗔𝗗𝗥𝗘 ',
         '[🔅] UBIGEO': '[🌐] 𝗨𝗕𝗜𝗚𝗘𝗢',
         'RESULTADOS 𝗦𝗔𝗟𝗔𝗥𝗜𝗢S': '💶 | 𝗥𝗘𝗦𝗨𝗟𝗧𝗔𝗗𝗢 𝗦𝗔𝗟𝗔𝗥𝗜𝗢',
-       
         '[#LEDER_BOT] → TELEFONOS [PREMIUM]': '☎️ | 𝗢𝗦𝗜𝗣𝗧𝗘𝗟 𝗢𝗡𝗟𝗜𝗡𝗘\n━━━━━━━━━━━━━━━━━━',
         '[#LEDER_BOT] → TELEFONOS [FREE]': '☎️ | 𝗕𝗔𝗦𝗘 𝗢𝗦𝗜𝗣𝗧𝗘𝗟\n━━━━━━━━━━━━━━━━━━',
         '[#LEDER_BOT] → TRABAJOS [PREMIUM]': '💼 | 𝗛𝗜𝗦𝗧𝗢𝗥𝗜𝗔𝗟 𝗖𝗛𝗔𝗠𝗕𝗔\n━━━━━━━━━━━━━━━━━━',
@@ -1576,12 +1576,16 @@ async def forward_response(event):
         '[#LEDER_BOT] → ARBOL GENEALOGICO [PREMIUM]': '🌲 | 𝗔𝗥𝗕𝗢𝗟 𝗚𝗘𝗡𝗘𝗔𝗟𝗢𝗚𝗜𝗖𝗢\n━━━━━━━━━━━━━━━━━━',
         '[#LEDER_BOT] → MOVIMIENTOS MIGRATORIOS ONLINE [PREMIUM]': '🛂 | 𝗠𝗢𝗩𝗜𝗠𝗜𝗘𝗡𝗧𝗢𝗦 𝗠𝗜𝗚𝗥𝗔𝗧𝗢𝗥𝗜𝗢𝗦\n━━━━━━━━━━━━━━━━━━',
         '[#JUPYTER_BOT] → CAPTURA[YAPE]': '🟣 | 𝗖𝗔𝗣𝗧𝗨𝗥𝗔 𝗬𝗔𝗣𝗘\n━━━━━━━━━━━━━━━━━━',
+        '[#LEDER_BOT] → RENIEC NOMBRES [PREMIUM]': '😶‍🌫️ | NOMBRES\n━━━━━━',
+        '[#LEDER_BOT] → PLACAS [PREMIUM]': '🚗 | 𝗣𝗟𝗔𝗖𝗔𝗦\n━━━━━━━━━━━━━━━━━━',
+        'COMBUSTIBLE': '𝗖𝗔𝗥𝗕𝗨𝗥𝗔𝗡𝗧𝗘',
 
         'RESTRICCION': '𝗥𝗘𝗦𝗧𝗥𝗜𝗖𝗖𝗜𝗢𝗡',
         'UBIGEO RENIEC': '𝗨𝗕𝗜𝗚𝗘𝗢 𝗥𝗘𝗡𝗜𝗘𝗖',
         'UBIGEO INEI': '𝗨𝗕𝗜𝗚𝗘𝗢 𝗜𝗡𝗘𝗜',
         'UBIGEO SUNAT': '𝗨𝗕𝗜𝗚𝗘𝗢 𝗦𝗨𝗡𝗔𝗧',
         'POSTAL': '𝗣𝗢𝗦𝗧𝗔𝗟',
+        'NOMBRES': '𝗡𝗢𝗠𝗕𝗥𝗘',     
         'NACIMIENTO': '𝗡𝗔𝗖𝗜𝗠𝗜𝗘𝗡𝗧𝗢',
         'MATRIMONIO': '𝗠𝗔𝗧𝗥𝗜𝗠𝗢𝗠𝗜𝗢',
         'DEFUNCION': '𝗗𝗘𝗙𝗨𝗡𝗖𝗜𝗢𝗡',
